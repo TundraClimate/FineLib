@@ -1,0 +1,1 @@
+typeSearchIndex = [{"l":"All Classes and Interfaces","u":"allclasses-index.html"},{"p":"com.tundra.finelib.event","l":"AsyncChatAfterEvent"},{"p":"com.tundra.finelib.event.spigot","l":"ChatEventListener"},{"p":"com.tundra.finelib.builder","l":"CustomItemBuilder"},{"p":"com.tundra.finelib","l":"FineLib"}];updateSearchResults();
