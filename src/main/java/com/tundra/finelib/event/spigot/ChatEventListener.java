@@ -8,7 +8,14 @@ import org.bukkit.event.Listener;
 import org.bukkit.event.player.AsyncPlayerChatEvent;
 import org.bukkit.scheduler.BukkitRunnable;
 
+/**
+ * Async Chat Listen
+ */
 public class ChatEventListener implements Listener {
+    /**
+     * ChatEvent Detect
+     * @param e AsyncPlayerChatEvent
+     */
     @EventHandler
     protected void ChatDetect(AsyncPlayerChatEvent e){
         new BukkitRunnable() {
