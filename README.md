@@ -22,8 +22,7 @@ public class Your_Plugin extends JavaPlugin{
     // your code...
 }
 ```
-This library is for **Minecraft 1.18**
-
+This library is for **Minecraft 1.18**  
 [Javadoc](https://tundraclimate.github.io/FineLib/javadoc/)
 # Author
 **Tundra_Climate**
