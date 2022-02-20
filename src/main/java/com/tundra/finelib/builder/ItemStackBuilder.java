@@ -15,7 +15,7 @@ import java.util.*;
 /**
  * Building CustomItem
  */
-public class CustomItemBuilder {
+public class ItemStackBuilder {
     private final ItemStack customItem;
     private final ItemMeta customMeta;
 
@@ -23,7 +23,7 @@ public class CustomItemBuilder {
      * set Material
      * @param material CustomItem Material
      */
-    public CustomItemBuilder(Material material){
+    public ItemStackBuilder(Material material){
         this.customItem = new ItemStack(material);
         this.customMeta = customItem.getItemMeta();
     }
@@ -33,7 +33,7 @@ public class CustomItemBuilder {
      * @param displayName Custom DisplayName
      * @return this
      */
-    public CustomItemBuilder setDisplayName(@Nonnull String displayName){
+    public ItemStackBuilder setDisplayName(@Nonnull String displayName){
         customMeta.setDisplayName(displayName);
         return this;
     }
@@ -43,7 +43,7 @@ public class CustomItemBuilder {
      * @param colorMeta DisplayName color
      * @return this
      */
-    public CustomItemBuilder setDisplayName(@Nonnull String displayName, ChatColor colorMeta){
+    public ItemStackBuilder setDisplayName(@Nonnull String displayName, ChatColor colorMeta){
         customMeta.setDisplayName(colorMeta+displayName);
         return this;
     }
@@ -52,7 +52,7 @@ public class CustomItemBuilder {
      * @param displayName add Custom DisplayName
      * @return this
      */
-    public CustomItemBuilder addDisplayName(@Nonnull String displayName){
+    public ItemStackBuilder addDisplayName(@Nonnull String displayName){
         customMeta.setDisplayName(customMeta.getDisplayName() + displayName);
         return this;
     }
@@ -62,7 +62,7 @@ public class CustomItemBuilder {
      * @param colorMeta add Color
      * @return this
      */
-    public CustomItemBuilder addDisplayName(@Nonnull String displayName, ChatColor colorMeta){
+    public ItemStackBuilder addDisplayName(@Nonnull String displayName, ChatColor colorMeta){
         customMeta.setDisplayName(customMeta.getDisplayName() + colorMeta + displayName);
         return this;
     }
@@ -72,7 +72,7 @@ public class CustomItemBuilder {
      * @param lore Custom Lore
      * @return this
      */
-    public CustomItemBuilder setLore(@Nonnull List<String> lore){
+    public ItemStackBuilder setLore(@Nonnull List<String> lore){
         customMeta.setLore(lore);
         return this;
     }
@@ -81,7 +81,7 @@ public class CustomItemBuilder {
      * @param lore Custom Lore
      * @return this
      */
-    public CustomItemBuilder setLore(@Nonnull Set<String> lore){
+    public ItemStackBuilder setLore(@Nonnull Set<String> lore){
         customMeta.setLore(lore.stream().toList());
         return this;
     }
@@ -90,7 +90,7 @@ public class CustomItemBuilder {
      * @param lore Custom Lore
      * @return this
      */
-    public CustomItemBuilder setLore(@Nonnull String... lore){
+    public ItemStackBuilder setLore(@Nonnull String... lore){
         customMeta.setLore(Arrays.asList(lore));
         return this;
     }
@@ -99,7 +99,7 @@ public class CustomItemBuilder {
      * @param lore Custom Lore
      * @return this
      */
-    public CustomItemBuilder addLore(@Nonnull List<String> lore){
+    public ItemStackBuilder addLore(@Nonnull List<String> lore){
         List<String> temp = customMeta.getLore();
         if (temp != null) {
             temp.addAll(lore);
@@ -112,7 +112,7 @@ public class CustomItemBuilder {
      * @param lore Custom Lore
      * @return this
      */
-    public CustomItemBuilder addLore(@Nonnull Set<String> lore){
+    public ItemStackBuilder addLore(@Nonnull Set<String> lore){
         List<String> temp = customMeta.getLore();
         if (temp != null) {
             temp.addAll(lore);
@@ -125,7 +125,7 @@ public class CustomItemBuilder {
      * @param lore Custom Lore
      * @return this
      */
-    public CustomItemBuilder addLore(@Nonnull String... lore){
+    public ItemStackBuilder addLore(@Nonnull String... lore){
         List<String> temp = customMeta.getLore();
         if (temp != null) {
             temp.addAll(Arrays.asList(lore));
@@ -138,7 +138,7 @@ public class CustomItemBuilder {
      * set Unbreakable
      * @return this
      */
-    public CustomItemBuilder isUnbreakable(){
+    public ItemStackBuilder isUnbreakable(){
         customMeta.setUnbreakable(true);
         return this;
     }
@@ -148,7 +148,7 @@ public class CustomItemBuilder {
      * @param flag add ItemFlags
      * @return this
      */
-    public CustomItemBuilder addItemFlags(@Nonnull ItemFlag... flag){
+    public ItemStackBuilder addItemFlags(@Nonnull ItemFlag... flag){
         customMeta.addItemFlags(flag);
         return this;
     }
@@ -158,7 +158,7 @@ public class CustomItemBuilder {
      * @param data CustomModelData
      * @return this
      */
-    public CustomItemBuilder setCustomModelData(int data){
+    public ItemStackBuilder setCustomModelData(int data){
         customMeta.setCustomModelData(data);
         return this;
     }
@@ -169,7 +169,7 @@ public class CustomItemBuilder {
      * @param level Enchant Level
      * @return this
      */
-    public CustomItemBuilder addEnchantment(@Nonnull Enchantment enchantment, int level){
+    public ItemStackBuilder addEnchantment(@Nonnull Enchantment enchantment, int level){
         customMeta.addEnchant(enchantment, level, true);
         return this;
     }
@@ -188,7 +188,7 @@ public class CustomItemBuilder {
      * @param enchantments Enchant to Map key = Enchant  value = Level
      * @return this
      */
-    public CustomItemBuilder addEnchantments(@Nonnull Map<Enchantment, Integer> enchantments){
+    public ItemStackBuilder addEnchantments(@Nonnull Map<Enchantment, Integer> enchantments){
         for (Map.Entry<Enchantment, Integer> entry : enchantments.entrySet()) {
             Enchantment(entry.getKey(), entry.getValue());
         }
@@ -201,7 +201,7 @@ public class CustomItemBuilder {
      * @param modifier Attribute Pair Modifier
      * @return this
      */
-    public CustomItemBuilder addAttributeModifier(@Nonnull Attribute attribute, @Nonnull AttributeModifier modifier){
+    public ItemStackBuilder addAttributeModifier(@Nonnull Attribute attribute, @Nonnull AttributeModifier modifier){
         customMeta.addAttributeModifier(attribute, modifier);
         return this;
     }
