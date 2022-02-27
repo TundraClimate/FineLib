@@ -1,6 +1,8 @@
 package com.tundra.finelib;
 
+import com.tundra.finelib.database.sqlite.SQLite;
 import com.tundra.finelib.event.spigot.ChatEventListener;
+import org.bukkit.Bukkit;
 import org.bukkit.plugin.java.JavaPlugin;
 
 import javax.annotation.Nonnull;
