@@ -7,10 +7,11 @@ FineLib is Spigot Convenient system Library
 ***Will never be completed.***
 ---
 ## Implemented
-- AsyncChatAfterEvent　*Called after chat
+- AsyncChatAfterEvent *Called after chat
   There is no content*
 - ItemStackBuilder *Simplified the operation of the item stack as a builder*
 - ColorStringBuilder *Build ChatColors with builder*
+- SQLiteConnector *SQLite Connect easily*
 # Usage
 Enter `FineLib.setPlugin(this)` in `onEnable()` of the plugin to be used.
 ```java
