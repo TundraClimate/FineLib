@@ -11,6 +11,7 @@ import java.sql.*;
 public class SQLite {
     private Connection connect = null;
     private Statement state = null;
+    private PreparedStatement preState = null;
 
     /**
      * connect Database
@@ -43,6 +44,16 @@ public class SQLite {
      */
     public ResultSet executeQuery(@Nonnull String sql) throws SQLException {
         return state.executeQuery(sql);
+    }
+
+    /**
+     * prepare State Wrap
+     * @param sql SQL code
+     * @return Statement
+     * @throws SQLException SQLException
+     */
+    public PreparedStatement prepareStatement(@Nonnull String sql) throws SQLException {
+        return this.preState = connect.prepareStatement(sql);
     }
 
     /**
@@ -82,6 +93,9 @@ public class SQLite {
             }
             if (state != null) {
                 state.close();
+            }
+            if (preState != null){
+                preState.close();
             }
         } catch (SQLException e) {
             e.printStackTrace();
