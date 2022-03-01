@@ -3,3 +3,4 @@ com.tundra.finelib.builder
 com.tundra.finelib.database.sqlite
 com.tundra.finelib.event
 com.tundra.finelib.event.spigot
+com.tundra.finelib.util
