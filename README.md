@@ -12,6 +12,8 @@ FineLib is Spigot Convenient system Library
 - ItemStackBuilder *Simplified the operation of the item stack as a builder*
 - ColorStringBuilder *Build ChatColors with builder*
 - SQLiteConnector *SQLite Connect easily*
+- InventoryBuilder *Build Inventory*
+- Base64Converter *Convert Base64*
 # Usage
 Enter `FineLib.setPlugin(this)` in `onEnable()` of the plugin to be used.
 ```java
