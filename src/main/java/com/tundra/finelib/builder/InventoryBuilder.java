@@ -207,6 +207,6 @@ public class InventoryBuilder {
      * @param player Inventory Open Player
      */
     public void openInventoryOfSync(Player player){
-        Bukkit.getScheduler().runTask(FineLib.getPlugin(), () -> player.openInventory(inventory));
+        FineLib.syncRunTask(()-> player.openInventory(inventory));
     }
 }
