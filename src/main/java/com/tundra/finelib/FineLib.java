@@ -1,6 +1,7 @@
 package com.tundra.finelib;
 
 import com.tundra.finelib.event.spigot.ChatEventListener;
+import org.bukkit.Bukkit;
 import org.bukkit.plugin.java.JavaPlugin;
 
 import javax.annotation.Nonnull;
@@ -67,5 +68,13 @@ public final class FineLib {
      */
     public static void testLogging(String message, JavaPlugin plugin) {
         plugin.getLogger().info(message);
+    }
+
+    /**
+     * RunTask of Sync
+     * @param runnable Run Task
+     */
+    public static void syncRunTask(Runnable runnable){
+        Bukkit.getScheduler().runTask(FineLib.getPlugin(),runnable);
     }
 }
