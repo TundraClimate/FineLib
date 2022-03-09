@@ -214,4 +214,12 @@ public class ItemStackBuilder {
         customItem.setItemMeta(customMeta);
         return customItem;
     }
+
+    /**
+     * get CustomItem MetaData
+     * @return Metadata
+     */
+    public ItemMeta getItemMeta() {
+        return customMeta;
+    }
 }
