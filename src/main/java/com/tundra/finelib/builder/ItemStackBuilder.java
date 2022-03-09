@@ -217,7 +217,7 @@ public class ItemStackBuilder {
 
     /**
      * get CustomItem MetaData
-     * @return Metadata
+     * @return item Metadata
      */
     public ItemMeta getItemMeta() {
         return customMeta;
