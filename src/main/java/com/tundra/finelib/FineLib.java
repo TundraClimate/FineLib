@@ -1,7 +1,11 @@
 package com.tundra.finelib;
 
+import com.tundra.finelib.event.SignClickEvent;
 import com.tundra.finelib.event.spigot.ChatEventListener;
+import com.tundra.finelib.event.spigot.PlayerInteract;
+import com.tundra.finelib.util.container.DataContainer;
 import org.bukkit.Bukkit;
+import org.bukkit.persistence.PersistentDataType;
 import org.bukkit.plugin.java.JavaPlugin;
 
 import javax.annotation.Nonnull;
@@ -33,6 +37,7 @@ public final class FineLib {
 
     private static void registeredEvent(JavaPlugin plugin) {
         plugin.getServer().getPluginManager().registerEvents(new ChatEventListener(), plugin);
+        plugin.getServer().getPluginManager().registerEvents(new PlayerInteract(), plugin);
     }
 
     /**
