@@ -8,6 +8,7 @@ import org.bukkit.enchantments.Enchantment;
 import org.bukkit.inventory.ItemFlag;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.meta.ItemMeta;
+import org.bukkit.persistence.PersistentDataContainer;
 
 import javax.annotation.Nonnull;
 import java.util.*;
@@ -221,5 +222,13 @@ public class ItemStackBuilder {
      */
     public ItemMeta getItemMeta() {
         return customMeta;
+    }
+
+    /**
+     * get DataContainer
+     * @return DataContainer
+     */
+    public PersistentDataContainer getContainer(){
+        return customMeta.getPersistentDataContainer();
     }
 }
