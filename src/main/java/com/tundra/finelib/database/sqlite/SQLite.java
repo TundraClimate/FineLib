@@ -76,7 +76,7 @@ public class SQLite {
             ResultSet rs = state.executeQuery(
                     "SELECT COUNT(*) FROM sqlite_master WHERE TYPE='table' AND name='" + table + "'"
             );
-            if (rs.getInt(1) == 0)
+            if (rs.getInt(1) != 0)
                 return true;
         } catch (SQLException e) {
             e.printStackTrace();
