@@ -17,7 +17,7 @@ public class SQLite {
      * connect Database
      * @param dbname DatabaseName
      */
-    public void connectSQLIte(@Nonnull final String dbname) {
+    public void connectSQLite(@Nonnull final String dbname) {
         try {
             Class.forName("org.sqlite.JDBC");
             if (!FineLib.getPlugin().getDataFolder().exists())
