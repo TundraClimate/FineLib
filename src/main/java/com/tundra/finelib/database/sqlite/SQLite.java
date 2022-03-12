@@ -20,7 +20,7 @@ public class SQLite {
     public void connectSQLIte(@Nonnull final String dbname) {
         try {
             Class.forName("org.sqlite.JDBC");
-            if (FineLib.getPlugin().getDataFolder().exists())
+            if (!FineLib.getPlugin().getDataFolder().exists())
                 FineLib.getPlugin().getDataFolder().mkdirs();
             this.connect = DriverManager.getConnection("jdbc:sqlite:" + ".\\plugins\\" + FineLib.getPlugin().getName() + "\\" + dbname);
             this.state = connect.createStatement();
