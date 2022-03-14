@@ -38,4 +38,24 @@ public class HeadGenerator {
         head.setItemMeta(headMeta);
         return head;
     }
+    public static ItemStack getHead(String value, String uuid) {
+        ItemStack head = new ItemStack(Material.PLAYER_HEAD);
+        ItemMeta headMeta = head.getItemMeta();
+        GameProfile profile = new GameProfile(UUID.fromString(uuid), null);
+        profile.getProperties().put("textures", new Property("textures", value));
+        Field profileField = null;
+        try {
+            profileField = headMeta.getClass().getDeclaredField("profile");
+        } catch (NoSuchFieldException | SecurityException e) {
+            e.printStackTrace();
+        }
+        profileField.setAccessible(true);
+        try {
+            profileField.set(headMeta, profile);
+        } catch (IllegalArgumentException | IllegalAccessException e) {
+            e.printStackTrace();
+        }
+        head.setItemMeta(headMeta);
+        return head;
+    }
 }
