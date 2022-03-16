@@ -262,6 +262,42 @@ public class ItemStackBuilder {
     }
 
     /**
+     * Hide Enchantment
+     * @return this
+     */
+    public ItemStackBuilder hideEnchant(){
+        customMeta.addItemFlags(ItemFlag.HIDE_ENCHANTS);
+        return this;
+    }
+
+    /**
+     * Hide Attributes
+     * @return this
+     */
+    public ItemStackBuilder hideAttribute(){
+        customMeta.addItemFlags(ItemFlag.HIDE_ATTRIBUTES);
+        return this;
+    }
+
+    /**
+     * Hide Unbreakable
+     * @return this
+     */
+    public ItemStackBuilder hideUnbreakable(){
+        customMeta.addItemFlags(ItemFlag.HIDE_UNBREAKABLE);
+        return this;
+    }
+
+    /**
+     * Hide Potion Effect
+     * @return this
+     */
+    public ItemStackBuilder hidePotEff(){
+        customMeta.addItemFlags(ItemFlag.HIDE_POTION_EFFECTS);
+        return this;
+    }
+
+    /**
      * build CustomItem
      *
      * @return CustomItem
