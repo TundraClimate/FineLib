@@ -161,7 +161,7 @@ public class ItemStackBuilder {
      *
      * @return this
      */
-    public ItemStackBuilder isUnbreakable() {
+    public ItemStackBuilder setUnbreakable() {
         customMeta.setUnbreakable(true);
         return this;
     }
