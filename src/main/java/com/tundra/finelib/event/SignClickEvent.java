@@ -12,6 +12,9 @@ import org.bukkit.event.block.Action;
 import org.bukkit.event.player.PlayerEvent;
 import org.bukkit.inventory.ItemStack;
 
+/**
+ * Event of Player SignClicked
+ */
 public class SignClickEvent extends PlayerEvent implements Cancellable {
     private Sign sign = null;
     private final ItemStack item;
@@ -19,6 +22,13 @@ public class SignClickEvent extends PlayerEvent implements Cancellable {
     private static final HandlerList HANDLERS_LIST = new HandlerList();
     private boolean isCancelled;
 
+    /**
+     * callEvent
+     * @param who clicked Player
+     * @param sign clicked Sign
+     * @param action clicked Action
+     * @param item clicked Item
+     */
     public SignClickEvent(Player who, Block sign, Action action, ItemStack item) {
         super(who);
         if (!sign.getLocation().getBlock().isEmpty())
@@ -39,20 +49,51 @@ public class SignClickEvent extends PlayerEvent implements Cancellable {
     @Override
     public void setCancelled(boolean b) {this.isCancelled = b;}
 
+    /**
+     * Sign getter
+     * @return sign
+     */
     public Sign getSign() {return sign;}
 
+    /**
+     * Action getter
+     * @return Action
+     */
     public Action getAction() {return action;}
 
+    /**
+     * Item getter
+     * @return Item
+     */
     public ItemStack getItem() {return item;}
 
+    /**
+     * Material getter
+     * @return Material
+     */
     public Material getMaterial() {return item.getType();}
 
+    /**
+     * set SignClicked Task
+     * @param task runner task
+     */
     public void setClickTask(Runnable task){
         FineLib.syncRunTask(task);
     }
+
+    /**
+     * set SignClick Command
+     * @param command run command
+     */
     public void setClickCommand(String command){
         getPlayer().performCommand(command);
     }
+
+    /**
+     * set SignClick Command
+     * @param command run Command
+     * @param needOP check op
+     */
     public void setClickCommand(String command, boolean needOP){
         if (needOP){
             getPlayer().performCommand(command);
