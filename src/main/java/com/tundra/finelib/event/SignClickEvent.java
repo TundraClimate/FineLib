@@ -41,6 +41,11 @@ public class SignClickEvent extends PlayerEvent implements Cancellable {
     public HandlerList getHandlers() {
         return HANDLERS_LIST;
     }
+
+    /**
+     * Event Handler getter
+     * @return HandlerList
+     */
     public static HandlerList getHandlerList() {return HANDLERS_LIST;}
 
     @Override
