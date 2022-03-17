@@ -1,7 +1,8 @@
 package com.tundra.finelib;
 
 import com.tundra.finelib.event.spigot.ChatEventListener;
-import com.tundra.finelib.event.spigot.PlayerInteract;
+import com.tundra.finelib.event.spigot.EntityDamageListener;
+import com.tundra.finelib.event.spigot.PlayerInteractListener;
 import org.bukkit.Bukkit;
 import org.bukkit.plugin.java.JavaPlugin;
 
@@ -34,7 +35,8 @@ public final class FineLib {
 
     private static void registeredEvent(JavaPlugin plugin) {
         plugin.getServer().getPluginManager().registerEvents(new ChatEventListener(), plugin);
-        plugin.getServer().getPluginManager().registerEvents(new PlayerInteract(), plugin);
+        plugin.getServer().getPluginManager().registerEvents(new PlayerInteractListener(), plugin);
+        plugin.getServer().getPluginManager().registerEvents(new EntityDamageListener(), plugin);
     }
 
     /**
