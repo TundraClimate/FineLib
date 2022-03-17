@@ -10,7 +10,7 @@ import org.bukkit.event.player.PlayerInteractEvent;
 /**
  * SignEvent callEvent
  */
-public class PlayerInteract implements Listener {
+public class PlayerInteractListener implements Listener {
     /**
      * Detect Clicked Sign
      *
