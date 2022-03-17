@@ -13,6 +13,7 @@ import org.bukkit.event.player.PlayerInteractEvent;
 public class PlayerInteract implements Listener {
     /**
      * Detect Clicked Sign
+     *
      * @param e InteractEvent
      */
     @EventHandler
@@ -30,7 +31,7 @@ public class PlayerInteract implements Listener {
                     CRIMSON_SIGN, CRIMSON_WALL_SIGN,
                     WARPED_SIGN, WARPED_WALL_SIGN -> FineLib.syncRunTask(() ->
                     Bukkit.getPluginManager().callEvent(
-                            new SignClickEvent(e.getPlayer(), e.getClickedBlock(), e.getAction(),e.getItem()))
+                            new SignClickEvent(e.getPlayer(), e.getAction(), e.getItem(), e.getClickedBlock(), e.getBlockFace(), e.getHand()))
             );
         }
     }
