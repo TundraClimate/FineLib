@@ -7,13 +7,27 @@ FineLib is Spigot Convenient system Library
 ***Will never be completed.***
 ---
 ## Implemented
-- AsyncChatAfterEvent *Called after chat
+### Events
+- **AsyncChatAfterEvent** *Called after chat
   There is no content*
-- ItemStackBuilder *Simplified the operation of the item stack as a builder*
-- ColorStringBuilder *Build ChatColors with builder*
-- SQLiteConnector *SQLite Connect easily*
-- InventoryBuilder *Build Inventory*
-- Base64Converter *Convert Base64*
+- **SignClickEvent** *Called by clicking on the sign*
+- **EntityFallDamageEvent** *Called when an entity takes fall damage*
+### Builders
+- **ItemStackBuilder** *Simplified the operation of the item stack as a builder*
+- **ColorStringBuilder** *Build ChatColors with builder*
+- **InventoryBuilder** *Build Inventory*
+- **PlaceItemBuilder** *Build Placeable Item*
+### Server Addon
+- **Distribute** *Distribute to Player*
+- **PreItemStack** *Init able ItemStack*
+### Others
+- **Base64Converter** *Convert Base64*
+- **HeadGenerator** *Build a McHead*
+- **DataContainer** *persistentDataContainer simply*
+- **Randomizer** *Create randomize getter*
+- **Shaped / Shapeless RecipeModifier** *Recipe easy register*
+- **SQLiteConnector** *SQLite Connect easily*
+
 # Usage
 Enter `FineLib.setPlugin(this)` in `onEnable()` of the plugin to be used.
 ```java
