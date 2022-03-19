@@ -13,12 +13,13 @@ import javax.annotation.Nonnull;
 public class DataContainer {
     /**
      * Container set Data
+     *
      * @param container Container to put data
-     * @param key Data Key
-     * @param type Data Type
-     * @param name Data Name
-     * @param <T> Param Type
-     * @param <Z> Param Type
+     * @param key       Data Key
+     * @param type      Data Type
+     * @param name      Data Name
+     * @param <T>       Param Type
+     * @param <Z>       Param Type
      */
     public static <T, Z> void setDataContainer(
             @Nonnull PersistentDataContainer container,
@@ -31,11 +32,12 @@ public class DataContainer {
 
     /**
      * Container get Data
+     *
      * @param container Container to get data
-     * @param key Data key
-     * @param type Data type
-     * @param <T> Param Type
-     * @param <Z> Param Type
+     * @param key       Data key
+     * @param type      Data type
+     * @param <T>       Param Type
+     * @param <Z>       Param Type
      * @return Data associated with the key
      */
     public static <T, Z> Z getDataContainer(
@@ -47,11 +49,12 @@ public class DataContainer {
 
     /**
      * Container to check if there is data
+     *
      * @param container Container to check data
-     * @param key Data key
-     * @param type Data Type
-     * @param <T> Data Param
-     * @param <Z> Data Param
+     * @param key       Data key
+     * @param type      Data Type
+     * @param <T>       Data Param
+     * @param <Z>       Data Param
      * @return result of check
      */
     public static <T, Z> boolean hasDataContainer(
@@ -59,20 +62,21 @@ public class DataContainer {
             @Nonnull String key,
             @Nonnull PersistentDataType<T, Z> type
     ) {
-        return container.has(new NamespacedKey(FineLib.getPlugin(),key), type);
+        return container.has(new NamespacedKey(FineLib.getPlugin(), key), type);
     }
 
     /**
      * Container remove Data
+     *
      * @param container Container to remove data
-     * @param key Data key
-     * @param <T> Data Param
-     * @param <Z> Data Param
+     * @param key       Data key
+     * @param <T>       Data Param
+     * @param <Z>       Data Param
      */
     public static <T, Z> void removeDataContainer(
             @Nonnull PersistentDataContainer container,
             @Nonnull String key
     ) {
-        container.remove(new NamespacedKey(FineLib.getPlugin(),key));
+        container.remove(new NamespacedKey(FineLib.getPlugin(), key));
     }
 }

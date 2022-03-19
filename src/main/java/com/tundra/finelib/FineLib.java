@@ -78,9 +78,10 @@ public final class FineLib {
 
     /**
      * RunTask of Sync
+     *
      * @param runnable Run Task
      */
-    public static void syncRunTask(Runnable runnable){
-        Bukkit.getScheduler().runTask(FineLib.getPlugin(),runnable);
+    public static void syncRunTask(Runnable runnable) {
+        Bukkit.getScheduler().runTask(FineLib.getPlugin(), runnable);
     }
 }

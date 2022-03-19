@@ -26,7 +26,7 @@ public class PlaceItemBuilder {
     private final BukkitRunnable killRunnable = new BukkitRunnable() {
         @Override
         public void run() {
-            if (hasItem()){
+            if (hasItem()) {
                 remove();
                 cancel();
             }
@@ -36,15 +36,15 @@ public class PlaceItemBuilder {
     /**
      * @param holdItem placing Item
      * @param location placing Location
-     * @param world Placing World
+     * @param world    Placing World
      */
-    public PlaceItemBuilder(@Nonnull ItemStack holdItem, @Nonnull Location location, @Nonnull World world){
+    public PlaceItemBuilder(@Nonnull ItemStack holdItem, @Nonnull Location location, @Nonnull World world) {
         this.holdItem = holdItem;
         this.location = location;
         this.itemLocation = location;
-        this.itemLocation.setX(itemLocation.getX()-0.08);
-        this.itemLocation.setY(itemLocation.getY()-0.65);
-        this.itemLocation.setZ(itemLocation.getZ()+0.44);
+        this.itemLocation.setX(itemLocation.getX() - 0.08);
+        this.itemLocation.setY(itemLocation.getY() - 0.65);
+        this.itemLocation.setZ(itemLocation.getZ() + 0.44);
         this.worldOfItem = world;
         placeItem();
     }
@@ -52,27 +52,27 @@ public class PlaceItemBuilder {
     /**
      * init Item
      */
-    private void placeItem(){
+    private void placeItem() {
         holdStand = (ArmorStand) worldOfItem.spawnEntity(itemLocation, EntityType.ARMOR_STAND);
         holdStand.setInvulnerable(true);
         holdStand.setArms(true);
         holdStand.setVisible(false);
         holdStand.setGravity(true);
         Objects.requireNonNull(holdStand.getEquipment()).setItemInMainHand(holdItem);
-        holdStand.setRightArmPose(new EulerAngle(-0.275,-95,0));
+        holdStand.setRightArmPose(new EulerAngle(-0.275, -95, 0));
     }
 
     /**
      * set PickUp able
+     *
      * @param b able
      * @return this
      */
-    public PlaceItemBuilder setItemPickUp(boolean b){
+    public PlaceItemBuilder setItemPickUp(boolean b) {
         if (b) {
             holdStand.removeEquipmentLock(EquipmentSlot.HAND, ArmorStand.LockType.REMOVING_OR_CHANGING);
             holdStand.removeEquipmentLock(EquipmentSlot.HAND, ArmorStand.LockType.ADDING_OR_CHANGING);
-        }
-        else {
+        } else {
             holdStand.addEquipmentLock(EquipmentSlot.HAND, ArmorStand.LockType.REMOVING_OR_CHANGING);
             holdStand.addEquipmentLock(EquipmentSlot.HAND, ArmorStand.LockType.ADDING_OR_CHANGING);
         }
@@ -81,48 +81,55 @@ public class PlaceItemBuilder {
 
     /**
      * Stand has Item
+     *
      * @return Stand has Item
      */
-    public boolean hasItem(){
+    public boolean hasItem() {
         return Objects.requireNonNull(holdStand.getEquipment()).getItemInMainHand().getType() == Material.AIR;
     }
 
     /**
      * Remove Stand of Not has Item
+     *
      * @return this
      */
-    public PlaceItemBuilder setKillOfNotHoldItem(){
-        this.killRunnable.runTaskTimer(FineLib.getPlugin(),0,5);
+    public PlaceItemBuilder setKillOfNotHoldItem() {
+        this.killRunnable.runTaskTimer(FineLib.getPlugin(), 0, 5);
         return this;
     }
 
     /**
      * Item Remove
      */
-    public void remove(){holdStand.remove();}
+    public void remove() {
+        holdStand.remove();
+    }
 
     /**
      * Stand set Marker
+     *
      * @param b Stand is Marker
      * @return this
      */
-    public PlaceItemBuilder setMarker(boolean b){
+    public PlaceItemBuilder setMarker(boolean b) {
         this.holdStand.setMarker(b);
         return this;
     }
 
     /**
      * set Receive Gravity
+     *
      * @param b Stand Received Gravity
      * @return this
      */
-    public PlaceItemBuilder setGravity(boolean b){
+    public PlaceItemBuilder setGravity(boolean b) {
         this.holdStand.setGravity(b);
         return this;
     }
 
     /**
      * HoldStand getter
+     *
      * @return HoldStand
      */
     public ArmorStand getHoldStand() {
@@ -131,6 +138,7 @@ public class PlaceItemBuilder {
 
     /**
      * HoldItem getter
+     *
      * @return HoldItem
      */
     public ItemStack getHoldItem() {
@@ -139,6 +147,7 @@ public class PlaceItemBuilder {
 
     /**
      * Location getter
+     *
      * @return item Location
      */
     public Location getLocation() {

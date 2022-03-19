@@ -20,6 +20,7 @@ public class PreItemStack {
 
     /**
      * set Material Type
+     *
      * @param material Material of ItemStack
      */
     public PreItemStack(Material material) {
@@ -28,6 +29,7 @@ public class PreItemStack {
 
     /**
      * set Item Amount
+     *
      * @param amount ItemStack Amount to set
      * @return ItemStack
      */
@@ -38,6 +40,7 @@ public class PreItemStack {
 
     /**
      * set Material Type
+     *
      * @param type Material type
      * @return ItemStack
      */
@@ -48,6 +51,7 @@ public class PreItemStack {
 
     /**
      * set ItemMeta
+     *
      * @param itemMeta ItemMeta to set
      * @return ItemStack
      */
@@ -58,6 +62,7 @@ public class PreItemStack {
 
     /**
      * set ItemStack DisplayName
+     *
      * @param displayName DisplayName to set
      * @return ItemStack
      */
@@ -72,6 +77,7 @@ public class PreItemStack {
 
     /**
      * set ItemStack Lore
+     *
      * @param lore Lore to set
      * @return ItemStack
      */
@@ -86,6 +92,7 @@ public class PreItemStack {
 
     /**
      * add ItemFlags
+     *
      * @param flags ItemFlags to add
      * @return ItemStack
      */
@@ -100,6 +107,7 @@ public class PreItemStack {
 
     /**
      * set Unbreakable
+     *
      * @param b Unbreakable
      * @return ItemStack
      */
@@ -114,6 +122,7 @@ public class PreItemStack {
 
     /**
      * set CustomModelData
+     *
      * @param value CustomModelData to set
      * @return ItemStack
      */
@@ -128,6 +137,7 @@ public class PreItemStack {
 
     /**
      * set Attributes
+     *
      * @param mod Modifiers
      * @return ItemStack
      */
@@ -142,8 +152,9 @@ public class PreItemStack {
 
     /**
      * add Attribute
+     *
      * @param attribute attribute
-     * @param modifier Modifier
+     * @param modifier  Modifier
      * @return ItemStack
      */
     public ItemStack addAttributeModifier(Attribute attribute, AttributeModifier modifier) {
@@ -157,8 +168,9 @@ public class PreItemStack {
 
     /**
      * add Enchantment
+     *
      * @param enchantment Enchantment Type
-     * @param level Enchant Level
+     * @param level       Enchant Level
      * @return ItemStack
      */
     public ItemStack addEnchantment(Enchantment enchantment, int level) {
@@ -168,6 +180,7 @@ public class PreItemStack {
 
     /**
      * add Enchantments
+     *
      * @param enchantments Enchant Map
      * @return ItemStack
      */
@@ -178,6 +191,7 @@ public class PreItemStack {
 
     /**
      * ItemStack getter
+     *
      * @return ItemStack
      */
     public ItemStack getItemStack() {

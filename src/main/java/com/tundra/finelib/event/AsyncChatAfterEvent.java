@@ -16,11 +16,12 @@ public class AsyncChatAfterEvent extends Event implements Cancellable {
 
     /**
      * Get chat information
-     * @param async isAsync
-     * @param who Chatting Player
+     *
+     * @param async   isAsync
+     * @param who     Chatting Player
      * @param message Chat Message
      */
-    public AsyncChatAfterEvent(boolean async, Player who, String message){
+    public AsyncChatAfterEvent(boolean async, Player who, String message) {
         super(async);
         this.message = message;
         this.player = who;
@@ -43,6 +44,7 @@ public class AsyncChatAfterEvent extends Event implements Cancellable {
 
     /**
      * return Handler List
+     *
      * @return Handlers list
      */
     public static HandlerList getHandlerList() {
@@ -51,6 +53,7 @@ public class AsyncChatAfterEvent extends Event implements Cancellable {
 
     /**
      * Chatting Player getter
+     *
      * @return Chatting Player
      */
     public Player getPlayer() {
@@ -59,6 +62,7 @@ public class AsyncChatAfterEvent extends Event implements Cancellable {
 
     /**
      * Message getter
+     *
      * @return Chat Message
      */
     public String getMessage() {

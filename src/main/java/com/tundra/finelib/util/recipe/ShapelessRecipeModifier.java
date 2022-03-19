@@ -10,31 +10,36 @@ import org.bukkit.inventory.ShapelessRecipe;
 /**
  * Shapeless Recipe Modify
  */
-public class ShapelessRecipeModifier implements RecipeModifier{
+public class ShapelessRecipeModifier implements RecipeModifier {
     private final ItemStack result;
     private final ShapelessRecipe recipe;
     private final NamespacedKey key;
 
     /**
      * ShapelessRecipe set Result and NameSpacedKey
+     *
      * @param result Recipe result
-     * @param key Recipe key
+     * @param key    Recipe key
      */
-    public ShapelessRecipeModifier(ItemStack result, NamespacedKey key){
+    public ShapelessRecipeModifier(ItemStack result, NamespacedKey key) {
         this.result = result;
         this.key = key;
-        this.recipe = new ShapelessRecipe(getKey(),getResult());
+        this.recipe = new ShapelessRecipe(getKey(), getResult());
     }
 
     @Override
-    public ItemStack getResult() {return result;}
+    public ItemStack getResult() {
+        return result;
+    }
 
     @Deprecated
     @Override
-    public void setRecipe(String... slot) {}
+    public void setRecipe(String... slot) {
+    }
 
     /**
      * add Ingredient
+     *
      * @param ingredient adding Ingredient
      */
     public void addIngredient(Material ingredient) {
@@ -42,10 +47,14 @@ public class ShapelessRecipeModifier implements RecipeModifier{
     }
 
     @Override
-    public Recipe getRecipe() {return recipe;}
+    public Recipe getRecipe() {
+        return recipe;
+    }
 
     @Override
-    public NamespacedKey getKey() {return key;}
+    public NamespacedKey getKey() {
+        return key;
+    }
 
     @Override
     public void register() {

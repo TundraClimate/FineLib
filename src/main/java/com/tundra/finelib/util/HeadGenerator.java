@@ -15,6 +15,7 @@ import java.util.UUID;
 public class HeadGenerator {
     /**
      * Please Use https://mineskin.org/
+     *
      * @param value skin Value
      * @return Head
      */
@@ -41,8 +42,9 @@ public class HeadGenerator {
 
     /**
      * get Head from UUID
+     *
      * @param value skin Value
-     * @param uuid UUID
+     * @param uuid  UUID
      * @return Head
      */
     public static ItemStack getHead(String value, String uuid) {
@@ -68,9 +70,10 @@ public class HeadGenerator {
 
     /**
      * get Head to ItemStack from UUID
-     * @param head Head ItemStack
+     *
+     * @param head  Head ItemStack
      * @param value skin Value
-     * @param uuid UUID
+     * @param uuid  UUID
      * @return Head
      */
     public static ItemStack getHead(ItemStack head, String value, String uuid) {

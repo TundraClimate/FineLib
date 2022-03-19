@@ -15,6 +15,7 @@ public class SQLite {
 
     /**
      * connect Database
+     *
      * @param dbname DatabaseName
      */
     public void connectSQLite(@Nonnull final String dbname) {
@@ -31,6 +32,7 @@ public class SQLite {
 
     /**
      * Wrapping executeUpdate
+     *
      * @param sql SQL code
      * @throws SQLException SQLException
      */
@@ -40,9 +42,10 @@ public class SQLite {
 
     /**
      * Wrapping executeQuery
+     *
      * @param sql SQL code
-     * @throws SQLException SQLException
      * @return Query
+     * @throws SQLException SQLException
      */
     public ResultSet executeQuery(@Nonnull String sql) throws SQLException {
         return state.executeQuery(sql);
@@ -50,6 +53,7 @@ public class SQLite {
 
     /**
      * prepare State Wrap
+     *
      * @param sql SQL code
      * @return Statement
      * @throws SQLException SQLException
@@ -60,6 +64,7 @@ public class SQLite {
 
     /**
      * state getter
+     *
      * @return state
      */
     public Statement getState() {
@@ -68,6 +73,7 @@ public class SQLite {
 
     /**
      * check Table
+     *
      * @param table Table to check
      * @return Does it exist
      */
@@ -96,7 +102,7 @@ public class SQLite {
             if (state != null) {
                 state.close();
             }
-            if (preState != null){
+            if (preState != null) {
                 preState.close();
             }
         } catch (SQLException e) {

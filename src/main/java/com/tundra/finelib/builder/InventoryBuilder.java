@@ -19,6 +19,7 @@ public class InventoryBuilder {
 
     /**
      * set InventoryHeight
+     *
      * @param invHeight inventory GUI Height
      */
     public InventoryBuilder(int invHeight) {
@@ -27,8 +28,9 @@ public class InventoryBuilder {
 
     /**
      * set InventoryHeight and InventoryTitle
+     *
      * @param invHeight Inventory GUI Height
-     * @param title Inventory GUI Name
+     * @param title     Inventory GUI Name
      */
     public InventoryBuilder(int invHeight, String title) {
         inventory = Bukkit.createInventory(null, invHeight * 9, title);
@@ -36,7 +38,8 @@ public class InventoryBuilder {
 
     /**
      * set InventoryType and InventoryTitle
-     * @param type Inventory GUI Type
+     *
+     * @param type  Inventory GUI Type
      * @param title Inventory GUI Name
      */
     public InventoryBuilder(InventoryType type, String title) {
@@ -45,7 +48,8 @@ public class InventoryBuilder {
 
     /**
      * set InventoryHolder and InventoryHeight
-     * @param holder Inventory GUI Holder
+     *
+     * @param holder    Inventory GUI Holder
      * @param invHeight Inventory GUI Height
      */
     public InventoryBuilder(InventoryHolder holder, int invHeight) {
@@ -54,8 +58,9 @@ public class InventoryBuilder {
 
     /**
      * set InventoryHolder and InventoryType
+     *
      * @param holder Inventory GUI Holder
-     * @param type Inventory GUI Type
+     * @param type   Inventory GUI Type
      */
     public InventoryBuilder(InventoryHolder holder, InventoryType type) {
         inventory = Bukkit.createInventory(holder, type);
@@ -63,9 +68,10 @@ public class InventoryBuilder {
 
     /**
      * set InventoryHolder, InventoryType and InventoryTitle
+     *
      * @param holder Inventory GUI Holder
-     * @param type Inventory GUI Type
-     * @param title Inventory GUI Name
+     * @param type   Inventory GUI Type
+     * @param title  Inventory GUI Name
      */
     public InventoryBuilder(InventoryHolder holder, InventoryType type, String title) {
         inventory = Bukkit.createInventory(holder, type, title);
@@ -73,6 +79,7 @@ public class InventoryBuilder {
 
     /**
      * setItem in Index
+     *
      * @param index Item Placed Index
      * @param stack Placed ItemStack
      * @return this
@@ -84,6 +91,7 @@ public class InventoryBuilder {
 
     /**
      * setItem for Map
+     *
      * @param stackEntry key: ItemIndex value: ItemStack
      * @return this
      */
@@ -94,6 +102,7 @@ public class InventoryBuilder {
 
     /**
      * filled Item
+     *
      * @param stack Filling Item
      * @return this
      */
@@ -104,6 +113,7 @@ public class InventoryBuilder {
 
     /**
      * add Items
+     *
      * @param stacks adding Items
      * @return this
      */
@@ -114,6 +124,7 @@ public class InventoryBuilder {
 
     /**
      * remove Item in Index
+     *
      * @param index removeItem index
      * @return this
      */
@@ -124,6 +135,7 @@ public class InventoryBuilder {
 
     /**
      * remove Item of Material
+     *
      * @param material removing Material
      * @return this
      */
@@ -134,6 +146,7 @@ public class InventoryBuilder {
 
     /**
      * remove Item of ItemStack
+     *
      * @param stack removing ItemStack
      * @return this
      */
@@ -144,6 +157,7 @@ public class InventoryBuilder {
 
     /**
      * clear Inventory
+     *
      * @return this
      */
     public InventoryBuilder clear() {
@@ -153,6 +167,7 @@ public class InventoryBuilder {
 
     /**
      * check Contains Material
+     *
      * @param material checking Material
      * @return contains Material
      */
@@ -162,6 +177,7 @@ public class InventoryBuilder {
 
     /**
      * check Contains ItemStack
+     *
      * @param stack checking ItemStack
      * @return contains ItemStack
      */
@@ -171,6 +187,7 @@ public class InventoryBuilder {
 
     /**
      * check Inventory on Empty
+     *
      * @return isEmpty
      */
     public boolean isEmpty() {
@@ -179,6 +196,7 @@ public class InventoryBuilder {
 
     /**
      * Inventory Size Getter
+     *
      * @return Inventory Size
      */
     public int getSize() {
@@ -187,6 +205,7 @@ public class InventoryBuilder {
 
     /**
      * get Index ItemStack
+     *
      * @param index getting Index
      * @return ItemStack
      */
@@ -196,6 +215,7 @@ public class InventoryBuilder {
 
     /**
      * convert Inventory
+     *
      * @return Inventory
      */
     public Inventory toInventory() {
@@ -204,9 +224,10 @@ public class InventoryBuilder {
 
     /**
      * Inventory open Is Sync
+     *
      * @param player Inventory Open Player
      */
-    public void openInventoryOfSync(Player player){
-        FineLib.syncRunTask(()-> player.openInventory(inventory));
+    public void openInventoryOfSync(Player player) {
+        FineLib.syncRunTask(() -> player.openInventory(inventory));
     }
 }

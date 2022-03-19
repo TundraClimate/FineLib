@@ -237,11 +237,12 @@ public class ItemStackBuilder {
 
     /**
      * add Metadata ContainerData
-     * @param key Data key
+     *
+     * @param key  Data key
      * @param type DataType
      * @param name Data Name
-     * @param <T> DataObject
-     * @param <Z> DataObject
+     * @param <T>  DataObject
+     * @param <Z>  DataObject
      * @return this
      */
     public <T, Z> ItemStackBuilder addContainerData(String key, PersistentDataType<T, Z> type, Z name) {
@@ -251,48 +252,53 @@ public class ItemStackBuilder {
 
     /**
      * remove Metadata ContainerData
+     *
      * @param key Data key
      * @param <T> DataObject
      * @param <Z> DataObject
      * @return this
      */
-    public <T, Z> ItemStackBuilder removeContainerData(String key){
-        DataContainer.removeDataContainer(customMeta.getPersistentDataContainer(),key);
+    public <T, Z> ItemStackBuilder removeContainerData(String key) {
+        DataContainer.removeDataContainer(customMeta.getPersistentDataContainer(), key);
         return this;
     }
 
     /**
      * Hide Enchantment
+     *
      * @return this
      */
-    public ItemStackBuilder hideEnchant(){
+    public ItemStackBuilder hideEnchant() {
         customMeta.addItemFlags(ItemFlag.HIDE_ENCHANTS);
         return this;
     }
 
     /**
      * Hide Attributes
+     *
      * @return this
      */
-    public ItemStackBuilder hideAttribute(){
+    public ItemStackBuilder hideAttribute() {
         customMeta.addItemFlags(ItemFlag.HIDE_ATTRIBUTES);
         return this;
     }
 
     /**
      * Hide Unbreakable
+     *
      * @return this
      */
-    public ItemStackBuilder hideUnbreakable(){
+    public ItemStackBuilder hideUnbreakable() {
         customMeta.addItemFlags(ItemFlag.HIDE_UNBREAKABLE);
         return this;
     }
 
     /**
      * Hide Potion Effect
+     *
      * @return this
      */
-    public ItemStackBuilder hidePotEff(){
+    public ItemStackBuilder hidePotEff() {
         customMeta.addItemFlags(ItemFlag.HIDE_POTION_EFFECTS);
         return this;
     }

@@ -6,6 +6,7 @@ import java.util.Random;
 
 /**
  * Create Randomizer
+ *
  * @param <E> Output classType
  */
 public class Randomizer<E> {
@@ -13,6 +14,7 @@ public class Randomizer<E> {
 
     /**
      * add Random Element
+     *
      * @param element adding Element
      */
     public void addElement(E element) {
@@ -21,6 +23,7 @@ public class Randomizer<E> {
 
     /**
      * remove Random Element
+     *
      * @param e Removed Element
      */
     public void removeElement(E e) {
@@ -30,16 +33,20 @@ public class Randomizer<E> {
 
     /**
      * Random LootTable getter
+     *
      * @return Loot
      */
-    public List<E> getTable() {return table;}
+    public List<E> getTable() {
+        return table;
+    }
 
     /**
      * Randomize
+     *
      * @return Random Element
      */
     public E getRandom() {
         if (table.isEmpty()) return null;
-        return table.get(new Random().nextInt(0, table.size()-1));
+        return table.get(new Random().nextInt(0, table.size() - 1));
     }
 }

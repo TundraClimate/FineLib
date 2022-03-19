@@ -10,31 +10,37 @@ import org.bukkit.inventory.ShapedRecipe;
 /**
  * SharpedRecipe Modify
  */
-public class ShapedRecipeModifier implements RecipeModifier{
+public class ShapedRecipeModifier implements RecipeModifier {
     private final ItemStack result;
     private final ShapedRecipe recipe;
     private final NamespacedKey key;
 
     /**
      * ShapedRecipe set Result and NameSpacedKey
+     *
      * @param result Recipe Result
-     * @param key Recipe Key
+     * @param key    Recipe Key
      */
-    public ShapedRecipeModifier(ItemStack result, NamespacedKey key){
+    public ShapedRecipeModifier(ItemStack result, NamespacedKey key) {
         this.result = result;
         this.key = key;
-        this.recipe = new ShapedRecipe(getKey(),getResult());
+        this.recipe = new ShapedRecipe(getKey(), getResult());
     }
 
     @Override
-    public ItemStack getResult() {return result;}
+    public ItemStack getResult() {
+        return result;
+    }
 
     @Override
-    public void setRecipe(String... slot) {recipe.shape(slot);}
+    public void setRecipe(String... slot) {
+        recipe.shape(slot);
+    }
 
     /**
      * set Ingredient
-     * @param key Ingredient key
+     *
+     * @param key        Ingredient key
      * @param ingredient setting Ingredient
      */
     public void setIngredient(char key, Material ingredient) {
@@ -42,10 +48,14 @@ public class ShapedRecipeModifier implements RecipeModifier{
     }
 
     @Override
-    public Recipe getRecipe() {return recipe;}
+    public Recipe getRecipe() {
+        return recipe;
+    }
 
     @Override
-    public NamespacedKey getKey() {return key;}
+    public NamespacedKey getKey() {
+        return key;
+    }
 
     @Override
     public void register() {

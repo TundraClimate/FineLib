@@ -10,16 +10,17 @@ import org.bukkit.scheduler.BukkitTask;
 public class Timer {
     /**
      * Create Timer
+     *
      * @param time time second
      * @param task runner Task
      * @return Timer
      */
-    public static BukkitTask createTimer(double time, Runnable task){
+    public static BukkitTask createTimer(double time, Runnable task) {
         return new BukkitRunnable() {
             @Override
             public void run() {
                 FineLib.syncRunTask(task);
             }
-        }.runTaskLater(FineLib.getPlugin(), (long)time*20);
+        }.runTaskLater(FineLib.getPlugin(), (long) time * 20);
     }
 }

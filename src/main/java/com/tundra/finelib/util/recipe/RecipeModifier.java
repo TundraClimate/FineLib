@@ -10,24 +10,28 @@ import org.bukkit.inventory.Recipe;
 public interface RecipeModifier {
     /**
      * recipe result getter
+     *
      * @return recipe Result
      */
     ItemStack getResult();
 
     /**
      * recipe setter
+     *
      * @param slot Recipe
      */
     void setRecipe(String... slot);
 
     /**
      * recipe getter
+     *
      * @return recipe
      */
     Recipe getRecipe();
 
     /**
      * NameSpacedKey getter
+     *
      * @return recipe NameSpacedKey
      */
     NamespacedKey getKey();

@@ -16,6 +16,7 @@ import java.util.Set;
 public class Distribute {
     /**
      * Distribute items
+     *
      * @param items Items to distribute
      */
     public static void distributeItem(ItemStack... items) {
@@ -24,6 +25,7 @@ public class Distribute {
 
     /**
      * Distribute items
+     *
      * @param items Items to distribute
      */
     public static void distributeItem(List<ItemStack> items) {
@@ -33,8 +35,9 @@ public class Distribute {
 
     /**
      * Distribute items
+     *
      * @param players Players to distribute
-     * @param items Items to distribute
+     * @param items   Items to distribute
      */
     public static void distributeItem(Player[] players, ItemStack... items) {
         Arrays.asList(players).forEach(player -> player.getInventory().addItem(items));
@@ -42,8 +45,9 @@ public class Distribute {
 
     /**
      * Distribute items
+     *
      * @param players Players to distribute
-     * @param items Items to distribute
+     * @param items   Items to distribute
      */
     public static void distributeItem(List<Player> players, ItemStack... items) {
         players.forEach(player -> player.getInventory().addItem(items));
@@ -51,8 +55,9 @@ public class Distribute {
 
     /**
      * Distribute items
+     *
      * @param players Players to distribute
-     * @param items Items to distribute
+     * @param items   Items to distribute
      */
     public static void distributeItem(Set<Player> players, ItemStack... items) {
         players.forEach(player -> player.getInventory().addItem(items));
@@ -60,8 +65,9 @@ public class Distribute {
 
     /**
      * Distribute items
+     *
      * @param players Players to distribute
-     * @param items Items to distribute
+     * @param items   Items to distribute
      */
     public static void distributeItem(Player[] players, List<ItemStack> items) {
         items.forEach(stack -> Arrays.asList(players).forEach(player -> player.getInventory().addItem(stack)));
@@ -69,8 +75,9 @@ public class Distribute {
 
     /**
      * Distribute items
+     *
      * @param players Players to distribute
-     * @param items Items to distribute
+     * @param items   Items to distribute
      */
     public static void distributeItem(List<Player> players, List<ItemStack> items) {
         items.forEach(stack -> players.forEach(player -> player.getInventory().addItem(stack)));
@@ -78,8 +85,9 @@ public class Distribute {
 
     /**
      * Distribute items
+     *
      * @param players Players to distribute
-     * @param items Items to distribute
+     * @param items   Items to distribute
      */
     public static void distributeItem(Set<Player> players, List<ItemStack> items) {
         items.forEach(stack -> players.forEach(player -> player.getInventory().addItem(stack)));
@@ -87,6 +95,7 @@ public class Distribute {
 
     /**
      * Distribute PotionEffects
+     *
      * @param effects Effect to distribute
      */
     public static void distributePotEff(PotionEffect... effects) {
@@ -95,6 +104,7 @@ public class Distribute {
 
     /**
      * Distribute PotionEffects
+     *
      * @param effects Effect to distribute
      */
     public static void distributePotEff(List<PotionEffect> effects) {
@@ -103,6 +113,7 @@ public class Distribute {
 
     /**
      * Distribute PotionEffects
+     *
      * @param effects Effect to distribute
      */
     public static void distributePotEff(Set<PotionEffect> effects) {

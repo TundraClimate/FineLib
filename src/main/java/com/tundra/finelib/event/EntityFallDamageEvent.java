@@ -14,9 +14,10 @@ public class EntityFallDamageEvent extends EntityDamageEvent implements Cancella
 
     /**
      * Event Caller
+     *
      * @param damagee damager
-     * @param cause Fall
-     * @param damage Damage received
+     * @param cause   Fall
+     * @param damage  Damage received
      */
     public EntityFallDamageEvent(Entity damagee, DamageCause cause, double damage) {
         super(damagee, cause, damage);
@@ -29,9 +30,10 @@ public class EntityFallDamageEvent extends EntityDamageEvent implements Cancella
 
     /**
      * HandlerList getter for static
+     *
      * @return HandlerList
      */
-    public static HandlerList getHandlersList(){
+    public static HandlerList getHandlersList() {
         return HANDLERS_LIST;
     }
 

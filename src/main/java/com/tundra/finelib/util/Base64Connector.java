@@ -14,6 +14,7 @@ import java.io.IOException;
 public class Base64Connector {
     /**
      * Object Convert to ByteArray
+     *
      * @param obj Converting Object
      * @return ByteArray
      */
@@ -30,6 +31,7 @@ public class Base64Connector {
 
     /**
      * ByteArray Convert to Object
+     *
      * @param byteArray Converting ByteArray
      * @return Convert Object
      */
@@ -45,6 +47,7 @@ public class Base64Connector {
 
     /**
      * String Convert to Object
+     *
      * @param str Converting String
      * @return Convert Object
      */
