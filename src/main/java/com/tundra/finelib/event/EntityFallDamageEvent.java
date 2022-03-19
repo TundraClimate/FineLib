@@ -5,10 +5,19 @@ import org.bukkit.event.Cancellable;
 import org.bukkit.event.HandlerList;
 import org.bukkit.event.entity.EntityDamageEvent;
 
+/**
+ * FallEntity Called Event
+ */
 public class EntityFallDamageEvent extends EntityDamageEvent implements Cancellable {
 
     private static final HandlerList HANDLERS_LIST = new HandlerList();
 
+    /**
+     * Event Caller
+     * @param damagee damager
+     * @param cause Fall
+     * @param damage Damage received
+     */
     public EntityFallDamageEvent(Entity damagee, DamageCause cause, double damage) {
         super(damagee, cause, damage);
     }
@@ -18,6 +27,10 @@ public class EntityFallDamageEvent extends EntityDamageEvent implements Cancella
         return HANDLERS_LIST;
     }
 
+    /**
+     * HandlerList getter for static
+     * @return HandlerList
+     */
     public static HandlerList getHandlersList(){
         return HANDLERS_LIST;
     }

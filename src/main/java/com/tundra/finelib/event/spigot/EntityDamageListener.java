@@ -6,7 +6,14 @@ import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.entity.EntityDamageEvent;
 
+/**
+ * Listen EntityDamage
+ */
 public class EntityDamageListener implements Listener {
+    /**
+     * Called EntityFallDamageEvent
+     * @param e EntityDamageEvent
+     */
     @EventHandler
     public void DetectPlayerDamage(EntityDamageEvent e){
         if (e.getCause() == EntityDamageEvent.DamageCause.FALL)
