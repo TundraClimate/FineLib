@@ -4,6 +4,7 @@ import com.tundra.finelib.event.spigot.ChatEventListener;
 import com.tundra.finelib.event.spigot.EntityDamageListener;
 import com.tundra.finelib.event.spigot.PlayerInteractListener;
 import org.bukkit.Bukkit;
+import org.bukkit.plugin.PluginManager;
 import org.bukkit.plugin.java.JavaPlugin;
 
 import javax.annotation.Nonnull;
@@ -34,9 +35,10 @@ public final class FineLib {
     }
 
     private static void registeredEvent(JavaPlugin plugin) {
-        plugin.getServer().getPluginManager().registerEvents(new ChatEventListener(), plugin);
-        plugin.getServer().getPluginManager().registerEvents(new PlayerInteractListener(), plugin);
-        plugin.getServer().getPluginManager().registerEvents(new EntityDamageListener(), plugin);
+        PluginManager manager = plugin.getServer().getPluginManager();
+        manager.registerEvents(new ChatEventListener(), plugin);
+        manager.registerEvents(new PlayerInteractListener(), plugin);
+        manager.registerEvents(new EntityDamageListener(), plugin);
     }
 
     /**
