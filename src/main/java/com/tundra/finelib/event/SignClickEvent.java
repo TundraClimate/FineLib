@@ -23,12 +23,13 @@ public class SignClickEvent extends PlayerInteractEvent implements Cancellable {
 
     /**
      * call Event
-     * @param who player
-     * @param action action
-     * @param item item
+     *
+     * @param who          player
+     * @param action       action
+     * @param item         item
      * @param clickedBlock block
-     * @param clickedFace clicked blockface
-     * @param hand clicked Hand
+     * @param clickedFace  clicked blockface
+     * @param hand         clicked Hand
      */
     public SignClickEvent(Player who, Action action, ItemStack item, Block clickedBlock, BlockFace clickedFace, EquipmentSlot hand) {
         super(who, action, item, clickedBlock, clickedFace, hand);
@@ -41,63 +42,82 @@ public class SignClickEvent extends PlayerInteractEvent implements Cancellable {
 
     /**
      * Event Handler getter
+     *
      * @return HandlerList
      */
-    public static HandlerList getHandlerList() {return HANDLERS_LIST;}
+    public static HandlerList getHandlerList() {
+        return HANDLERS_LIST;
+    }
 
 
     @Override
-    public void setCancelled(boolean b) {super.setCancelled(b);}
+    public void setCancelled(boolean b) {
+        super.setCancelled(b);
+    }
 
     /**
      * Sign getter
+     *
      * @return sign
      */
-    public Sign getSign() {return (Sign)super.getClickedBlock();}
+    public Sign getSign() {
+        return (Sign) super.getClickedBlock();
+    }
 
     /**
      * Action getter
+     *
      * @return Action
      */
-    public Action getAction() {return super.getAction();}
+    public Action getAction() {
+        return super.getAction();
+    }
 
     /**
      * Item getter
+     *
      * @return Item
      */
-    public ItemStack getItem() {return super.getItem();}
+    public ItemStack getItem() {
+        return super.getItem();
+    }
 
     /**
      * Material getter
+     *
      * @return Material
      */
-    public Material getMaterial() {return super.getMaterial();}
+    public Material getMaterial() {
+        return super.getMaterial();
+    }
 
     /**
      * set SignClicked Task
+     *
      * @param task runner task
      */
-    public void setClickTask(Runnable task){
+    public void setClickTask(Runnable task) {
         FineLib.syncRunTask(task);
     }
 
     /**
      * set SignClick Command
+     *
      * @param command run command
      */
-    public void setClickCommand(String command){
+    public void setClickCommand(String command) {
         getPlayer().performCommand(command);
     }
 
     /**
      * set SignClick Command
+     *
      * @param command run Command
-     * @param needOP check op
+     * @param needOP  check op
      */
-    public void setClickCommand(String command, boolean needOP){
-        if (needOP){
+    public void setClickCommand(String command, boolean needOP) {
+        if (needOP) {
             getPlayer().performCommand(command);
-        }
-        else Bukkit.dispatchCommand(Bukkit.getConsoleSender(),command);
+        } else Bukkit.dispatchCommand(Bukkit.getConsoleSender(), command);
     }
 }
