@@ -1,6 +1,10 @@
 com.tundra.finelib
+com.tundra.finelib.addon.entity.player
+com.tundra.finelib.addon.server
 com.tundra.finelib.builder
 com.tundra.finelib.database.sqlite
 com.tundra.finelib.event
 com.tundra.finelib.event.spigot
 com.tundra.finelib.util
+com.tundra.finelib.util.container
+com.tundra.finelib.util.recipe
