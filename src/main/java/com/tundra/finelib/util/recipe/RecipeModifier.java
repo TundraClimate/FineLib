@@ -37,6 +37,11 @@ public interface RecipeModifier {
     NamespacedKey getKey();
 
     /**
+     * Recipe Group setter
+     */
+    void setGroup(String group);
+
+    /**
      * register Recipe
      */
     void register();

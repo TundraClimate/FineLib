@@ -57,6 +57,11 @@ public class ShapelessRecipeModifier implements RecipeModifier {
     }
 
     @Override
+    public void setGroup(String group) {
+        recipe.setGroup(group);
+    }
+
+    @Override
     public void register() {
         Bukkit.addRecipe(recipe);
     }
