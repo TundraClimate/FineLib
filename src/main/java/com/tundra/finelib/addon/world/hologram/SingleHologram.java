@@ -6,9 +6,17 @@ import org.bukkit.World;
 import org.bukkit.entity.ArmorStand;
 import org.bukkit.entity.EntityType;
 
+/**
+ * SingleLine Hologram
+ */
 public class SingleHologram implements Hologram {
     private ArmorStand hologram;
 
+    /**
+     * set Hologram Location
+     * @param location location
+     * @param world world
+     */
     public SingleHologram(Location location, World world) {
         FineLib.syncRunTask(() -> {
             hologram = (ArmorStand) world.spawnEntity(location, EntityType.ARMOR_STAND);
@@ -41,6 +49,10 @@ public class SingleHologram implements Hologram {
         FineLib.syncRunTask(()-> getHologram().remove());
     }
 
+    /**
+     * hologram getter
+     * @return hologram Entity
+     */
     public ArmorStand getHologram() {
         return hologram;
     }
