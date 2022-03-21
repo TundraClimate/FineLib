@@ -38,6 +38,7 @@ public interface RecipeModifier {
 
     /**
      * Recipe Group setter
+     * @param group Group
      */
     void setGroup(String group);
 
