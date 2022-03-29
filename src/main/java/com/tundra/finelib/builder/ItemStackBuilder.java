@@ -327,9 +327,7 @@ public class ItemStackBuilder {
      *
      * @return Lore Length
      */
-    public int getLoreLength() {
-        return customMeta.getLore() != null ? customMeta.getLore().size() : 0;
-    }
+    public int getLoreLength() {return customMeta.getLore() != null ? customMeta.getLore().size() : 0;}
 
     /**
      * get DataContainer
