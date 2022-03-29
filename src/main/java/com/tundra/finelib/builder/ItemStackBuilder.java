@@ -323,6 +323,15 @@ public class ItemStackBuilder {
     }
 
     /**
+     * get Length of ItemStack Lore
+     *
+     * @return Lore Length
+     */
+    public int getLoreLength() {
+        return customMeta.getLore() != null ? customMeta.getLore().size() : 0;
+    }
+
+    /**
      * get DataContainer
      *
      * @return DataContainer
