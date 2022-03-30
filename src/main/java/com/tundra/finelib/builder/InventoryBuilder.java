@@ -107,7 +107,10 @@ public class InventoryBuilder {
      * @return this
      */
     public InventoryBuilder fillItem(ItemStack stack) {
-        inventory.all(stack);
+        int index = 0;
+        for (;inventory.getSize() <= index;index++){
+            inventory.setItem(index, stack);
+        }
         return this;
     }
 
