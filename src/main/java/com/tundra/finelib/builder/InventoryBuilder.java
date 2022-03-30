@@ -107,8 +107,7 @@ public class InventoryBuilder {
      * @return this
      */
     public InventoryBuilder fillItem(ItemStack stack) {
-        int index = 0;
-        for (;inventory.getSize() <= index;index++){
+        for (int index = 0;inventory.getSize()-1 >= index;index++){
             inventory.setItem(index, stack);
         }
         return this;
