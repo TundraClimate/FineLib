@@ -1,13 +1,16 @@
 package com.tundra.finelib.http.discord.builder;
 
+import com.tundra.finelib.http.discord.Embed;
+import com.tundra.finelib.http.discord.WebhookProperty;
+
 import javax.annotation.Nonnull;
-import java.util.*;
+import java.util.List;
 
 /**
  * Build Webhook Property
  */
 public class WebHookPropertyBuilder {
-    private final Map<String, Object> postMap = new HashMap<>();
+    private final WebhookProperty webhookProperty = new WebhookProperty();
 
     /**
      * set Content of Sending
@@ -16,9 +19,8 @@ public class WebHookPropertyBuilder {
      * @return this
      */
     public WebHookPropertyBuilder setContent(@Nonnull String content) {
-        if (postMap.containsKey("content")) return this;
         String cont = content.length() <= 2000 ? content : content.substring(0, 2000);
-        postMap.put("content", cont);
+        webhookProperty.setContent(cont);
         return this;
     }
 
@@ -29,9 +31,8 @@ public class WebHookPropertyBuilder {
      * @return this
      */
     public WebHookPropertyBuilder setUserName(String userName) {
-        if (postMap.containsKey("username")) return this;
         String user = userName.length() <= 32 ? userName : userName.substring(0, 32);
-        postMap.put("username", user);
+        webhookProperty.setUsername(user);
         return this;
     }
 
@@ -42,32 +43,28 @@ public class WebHookPropertyBuilder {
      * @return this
      */
     public WebHookPropertyBuilder setAvatarURL(String avatarURL) {
-        if (postMap.containsKey("avatar_url")) return this;
-        postMap.put("avatar_url", avatarURL);
+        webhookProperty.setAvatar_url(avatarURL);
         return this;
     }
 
     /**
      * set Embeds of Message to Send
      *
-     * @param builder EmbedBuilder
+     * @param embeds Embeds
      * @return this
      */
-    public WebHookPropertyBuilder setEmbeds(EmbedBuilder... builder) {
-        if (postMap.containsKey("embeds")) return this;
-        if (builder.length > 10) return this;
-        List<Map<String, Object>> mapList = new ArrayList<>();
-        Arrays.stream(builder).forEach(embed -> mapList.add(embed.getEmbeds()));
-        postMap.put("embeds", mapList);
+    public WebHookPropertyBuilder setEmbeds(List<Embed> embeds) {
+        if (embeds.size() > 10) throw new IllegalArgumentException("embeds is max 10");
+        webhookProperty.setEmbeds(embeds);
         return this;
     }
 
     /**
-     * get PostMap
+     * Property Getter
      *
-     * @return PostMap
+     * @return Webhook Property
      */
-    public Map<String, Object> getPostMap() {
-        return postMap;
+    public WebhookProperty getWebhookProperty() {
+        return webhookProperty;
     }
 }

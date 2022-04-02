@@ -42,11 +42,24 @@ public class WebHook {
     /**
      * set Post Property
      *
+     * @param property Property
+     */
+    public void setProperty(WebhookProperty property) {
+        try (OutputStream os = connection.getOutputStream()) {
+            os.write(new Gson().toJson(property).getBytes(StandardCharsets.UTF_8));
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    /**
+     * set Post Property
+     *
      * @param builder Property Builder
      */
     public void setProperty(WebHookPropertyBuilder builder) {
         try (OutputStream os = connection.getOutputStream()) {
-            os.write(new Gson().toJson(builder.getPostMap()).getBytes(StandardCharsets.UTF_8));
+            os.write(new Gson().toJson(builder.getWebhookProperty()).getBytes(StandardCharsets.UTF_8));
         } catch (IOException e) {
             e.printStackTrace();
         }
