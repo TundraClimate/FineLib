@@ -184,7 +184,7 @@ public class Embed {
      * @return isEmpty
      */
     public boolean isEmpty() {
-        return title == null || color == 0 || url == null || description == null || author == null || fields.isEmpty() || image == null || thumbnail == null || footer == null;
+        return title == null && color == 0 && url == null && description == null && author == null && fields.isEmpty() && image == null && thumbnail == null && footer == null;
     }
 
     /**
