@@ -179,6 +179,15 @@ public class Embed {
     }
 
     /**
+     * Embed isEmpty
+     *
+     * @return isEmpty
+     */
+    public boolean isEmpty() {
+        return title == null || color == 0 || url == null || description == null || author == null || fields.isEmpty() || image == null || thumbnail == null || footer == null;
+    }
+
+    /**
      * Author Data class
      */
     public static class Author {
