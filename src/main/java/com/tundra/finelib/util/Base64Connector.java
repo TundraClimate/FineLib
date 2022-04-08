@@ -68,7 +68,7 @@ public class Base64Connector {
      * @param bytes byte Array
      * @return Encoding String
      */
-    public static String byteToString(byte[] bytes) {
+    public static String encode(byte[] bytes) {
         return Base64.getEncoder().encodeToString(bytes);
     }
 
@@ -76,9 +76,19 @@ public class Base64Connector {
      * Decode Base64
      *
      * @param str string
-     * @return Decoding byte[]
+     * @return Decoding String
      */
-    public static byte[] stringToByte(String str) {
-        return Base64.getDecoder().decode(str);
+    public static String decode(String str) {
+        return new String(Base64.getDecoder().decode(str));
+    }
+
+    /**
+     * Encode Base64
+     *
+     * @param obj object
+     * @return Encode String
+     */
+    public static String encode(Object obj) {
+        return Base64.getEncoder().encodeToString(ObjectToByteArray(obj));
     }
 }
