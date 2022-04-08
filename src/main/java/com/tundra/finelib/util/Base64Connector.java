@@ -75,11 +75,11 @@ public class Base64Connector {
     /**
      * Decode Base64
      *
-     * @param str string
-     * @return Decoding String
+     * @param str base64 String
+     * @return Decoding Object
      */
-    public static String decode(String str) {
-        return new String(Base64.getDecoder().decode(str));
+    public static Object decode(String str) {
+        return ByteArrayToObject(Base64.getDecoder().decode(str));
     }
 
     /**
