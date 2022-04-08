@@ -7,6 +7,7 @@ import org.yaml.snakeyaml.external.biz.base64Coder.Base64Coder;
 import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
+import java.util.Base64;
 
 /**
  * Bidirectional Base64 Encoding
@@ -59,5 +60,25 @@ public class Base64Connector {
             e.printStackTrace();
         }
         return null;
+    }
+
+    /**
+     * Encode Base64
+     *
+     * @param bytes byte Array
+     * @return Encoding String
+     */
+    public static String byteToString(byte[] bytes) {
+        return Base64.getEncoder().encodeToString(bytes);
+    }
+
+    /**
+     * Decode Base64
+     *
+     * @param str string
+     * @return Decoding byte[]
+     */
+    public static byte[] stringToByte(String str) {
+        return Base64.getDecoder().decode(str);
     }
 }
