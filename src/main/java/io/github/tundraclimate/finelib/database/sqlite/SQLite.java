@@ -90,6 +90,19 @@ public class SQLite {
         return false;
     }
 
+    public boolean containValue(String table, String column, String value) {
+        boolean bool = false;
+        try {
+            ResultSet rs = state.executeQuery(
+                    "SELECT COUNT(*) FROM "+ table +" WHERE "+ column +" ='" + value + "'"
+            );
+            bool = rs.getInt(1) != 0;
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return bool;
+    }
+
     /**
      * disconnect Database
      */
