@@ -10,6 +10,10 @@ import java.util.List;
  * Implemented Register Method
  */
 public abstract class RegisterEvent implements Listener {
+    public RegisterEvent(RegisterEvent event) {
+        register.add(event);
+    }
+
     private static final List<RegisterEvent> register = new ArrayList<>();
 
     /**
