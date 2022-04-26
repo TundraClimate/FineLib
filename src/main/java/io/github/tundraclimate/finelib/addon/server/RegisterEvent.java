@@ -10,11 +10,6 @@ import java.util.List;
  * Implemented Register Method
  */
 public abstract class RegisterEvent implements Listener {
-    public RegisterEvent(RegisterEvent event) {
-        register.add(event);
-    }
-
-    private static final List<RegisterEvent> register = new ArrayList<>();
 
     /**
      * Instance Register
@@ -30,9 +25,5 @@ public abstract class RegisterEvent implements Listener {
      */
     public static void register(RegisterEvent event) {
         FineLib.getPlugin().getServer().getPluginManager().registerEvents(event, FineLib.getPlugin());
-    }
-
-    public static void registerAll() {
-        register.forEach(reg -> reg.register());
     }
 }
