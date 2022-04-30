@@ -11,6 +11,20 @@ public abstract class ConfigObject {
     private FileConfiguration config = null;
 
     /**
+     * Default Constructor
+     */
+    public ConfigObject(){}
+
+    /**
+     * init Constructor
+     * @param plugin Plugin Instance
+     */
+    public ConfigObject(JavaPlugin plugin) {
+        plugin.saveDefaultConfig();
+        config = plugin.getConfig();
+    }
+
+    /**
      * Init Config and save Default
      * @param plugin Plugin Instance
      */
