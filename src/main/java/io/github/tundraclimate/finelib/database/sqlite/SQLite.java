@@ -9,16 +9,19 @@ import java.sql.*;
  * SQLite connect
  */
 public final class SQLite {
+    private final String dbname;
     private Connection connect = null;
     private Statement state = null;
     private PreparedStatement preState = null;
 
+    public SQLite(@NotNull final String dbname) {
+        this.dbname = dbname;
+    }
+
     /**
      * connect Database
-     *
-     * @param dbname DatabaseName
      */
-    public void connectSQLite(@NotNull final String dbname) {
+    public void connectSQLite() {
         try {
             Class.forName("org.sqlite.JDBC");
             if (!FineLib.getPlugin().getDataFolder().exists())
@@ -128,5 +131,13 @@ public final class SQLite {
         } catch (SQLException e) {
             e.printStackTrace();
         }
+    }
+
+    /**
+     * DataBase Name getter
+     * @return Database fileName
+     */
+    public String getDbname() {
+        return dbname;
     }
 }
