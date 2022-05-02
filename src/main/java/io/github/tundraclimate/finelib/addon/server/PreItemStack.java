@@ -15,7 +15,7 @@ import java.util.Map;
 /**
  * LateInit ItemStack
  */
-public class PreItemStack {
+public final class PreItemStack {
     private final ItemStack itemStack;
 
     /**

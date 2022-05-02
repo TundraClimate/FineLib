@@ -10,7 +10,7 @@ import org.bukkit.inventory.ShapedRecipe;
 /**
  * SharpedRecipe Modify
  */
-public class ShapedRecipeModifier implements RecipeModifier {
+public final class ShapedRecipeModifier implements RecipeModifier {
     private final ItemStack result;
     private final ShapedRecipe recipe;
     private final NamespacedKey key;

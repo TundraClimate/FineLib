@@ -18,7 +18,7 @@ import java.util.*;
 /**
  * Building CustomItem
  */
-public class ItemStackBuilder {
+public final class ItemStackBuilder {
     private final ItemStack customItem;
     private final ItemMeta customMeta;
 

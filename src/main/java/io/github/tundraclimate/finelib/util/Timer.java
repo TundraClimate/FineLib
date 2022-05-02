@@ -7,7 +7,7 @@ import org.bukkit.scheduler.BukkitTask;
 /**
  * Timer Class
  */
-public class Timer {
+public final class Timer {
     /**
      * Create Timer
      *

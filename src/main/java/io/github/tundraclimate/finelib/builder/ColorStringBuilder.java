@@ -5,7 +5,7 @@ import org.bukkit.ChatColor;
 /**
  * build ColorString
  */
-public class ColorStringBuilder {
+public final class ColorStringBuilder {
     private final StringBuilder builder;
 
     /**

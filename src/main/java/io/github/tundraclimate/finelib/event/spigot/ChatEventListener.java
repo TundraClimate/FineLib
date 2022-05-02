@@ -11,13 +11,13 @@ import org.bukkit.scheduler.BukkitRunnable;
 /**
  * Async Chat Listen
  */
-public class ChatEventListener implements Listener {
+public final class ChatEventListener implements Listener {
     /**
      * ChatEvent Detect
      * @param e AsyncPlayerChatEvent
      */
     @EventHandler
-    protected void ChatDetect(AsyncPlayerChatEvent e){
+    private void ChatDetect(AsyncPlayerChatEvent e){
         new BukkitRunnable() {
             @Override
             public void run() {

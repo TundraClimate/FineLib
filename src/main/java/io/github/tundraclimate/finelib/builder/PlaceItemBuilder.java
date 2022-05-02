@@ -17,7 +17,7 @@ import java.util.Objects;
 /**
  * ItemPlaced Ground
  */
-public class PlaceItemBuilder {
+public final class PlaceItemBuilder {
     private final Location location;
     private final Location itemLocation;
     private final ItemStack holdItem;

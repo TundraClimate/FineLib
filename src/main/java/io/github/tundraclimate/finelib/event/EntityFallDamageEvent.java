@@ -8,7 +8,7 @@ import org.bukkit.event.entity.EntityDamageEvent;
 /**
  * FallEntity Called Event
  */
-public class EntityFallDamageEvent extends EntityDamageEvent implements Cancellable {
+public final class EntityFallDamageEvent extends EntityDamageEvent implements Cancellable {
 
     private static final HandlerList HANDLERS_LIST = new HandlerList();
 

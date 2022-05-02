@@ -17,7 +17,7 @@ import org.bukkit.inventory.ItemStack;
 /**
  * Event of Player SignClicked
  */
-public class SignClickEvent extends PlayerInteractEvent implements Cancellable {
+public final class SignClickEvent extends PlayerInteractEvent implements Cancellable {
     private static final HandlerList HANDLERS_LIST = new HandlerList();
     private boolean isCancelled;
 

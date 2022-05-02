@@ -8,7 +8,7 @@ import org.bukkit.event.HandlerList;
 /**
  * Events called after asynchronous chat
  */
-public class AsyncChatAfterEvent extends Event implements Cancellable {
+public final class AsyncChatAfterEvent extends Event implements Cancellable {
     private final String message;
     private final Player player;
     private static final HandlerList HANDLERS_LIST = new HandlerList();

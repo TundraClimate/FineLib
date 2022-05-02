@@ -9,13 +9,13 @@ import org.bukkit.event.entity.EntityDamageEvent;
 /**
  * Listen EntityDamage
  */
-public class EntityDamageListener implements Listener {
+public final class EntityDamageListener implements Listener {
     /**
      * Called EntityFallDamageEvent
      * @param e EntityDamageEvent
      */
     @EventHandler
-    public void DetectPlayerDamage(EntityDamageEvent e){
+    private void DetectPlayerDamage(EntityDamageEvent e){
         if (e.getCause() == EntityDamageEvent.DamageCause.FALL)
             FineLib.getPlugin().getServer().getPluginManager()
                     .callEvent(new EntityFallDamageEvent(e.getEntity(),e.getCause(),e.getDamage()));

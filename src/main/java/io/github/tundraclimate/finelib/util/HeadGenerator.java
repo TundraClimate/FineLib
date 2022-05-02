@@ -12,7 +12,7 @@ import java.util.UUID;
 /**
  * Gen CustomHead
  */
-public class HeadGenerator {
+public final class HeadGenerator {
     /**
      * Please Use https://mineskin.org/
      *

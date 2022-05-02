@@ -1,14 +1,14 @@
 package io.github.tundraclimate.finelib.database.sqlite;
 
 import io.github.tundraclimate.finelib.FineLib;
+import org.jetbrains.annotations.NotNull;
 
-import javax.annotation.Nonnull;
 import java.sql.*;
 
 /**
  * SQLite connect
  */
-public class SQLite {
+public final class SQLite {
     private Connection connect = null;
     private Statement state = null;
     private PreparedStatement preState = null;
@@ -18,7 +18,7 @@ public class SQLite {
      *
      * @param dbname DatabaseName
      */
-    public void connectSQLite(@Nonnull final String dbname) {
+    public void connectSQLite(@NotNull final String dbname) {
         try {
             Class.forName("org.sqlite.JDBC");
             if (!FineLib.getPlugin().getDataFolder().exists())
@@ -36,7 +36,7 @@ public class SQLite {
      * @param sql SQL code
      * @throws SQLException SQLException
      */
-    public void executeUpdate(@Nonnull String sql) throws SQLException {
+    public void executeUpdate(@NotNull String sql) throws SQLException {
         state.executeUpdate(sql);
     }
 
@@ -47,7 +47,7 @@ public class SQLite {
      * @return Query
      * @throws SQLException SQLException
      */
-    public ResultSet executeQuery(@Nonnull String sql) throws SQLException {
+    public ResultSet executeQuery(@NotNull String sql) throws SQLException {
         return state.executeQuery(sql);
     }
 
@@ -58,7 +58,7 @@ public class SQLite {
      * @return Statement
      * @throws SQLException SQLException
      */
-    public PreparedStatement prepareStatement(@Nonnull String sql) throws SQLException {
+    public PreparedStatement prepareStatement(@NotNull String sql) throws SQLException {
         return this.preState = connect.prepareStatement(sql);
     }
 
@@ -77,7 +77,7 @@ public class SQLite {
      * @param table Table to check
      * @return Does it exist
      */
-    public boolean hasTable(@Nonnull String table) {
+    public boolean hasTable(@NotNull String table) {
         try {
             ResultSet rs = state.executeQuery(
                     "SELECT COUNT(*) FROM sqlite_master WHERE TYPE='table' AND name='" + table + "'"
@@ -90,6 +90,13 @@ public class SQLite {
         return false;
     }
 
+    /**
+     * check ContainValue
+     * @param table checking table
+     * @param column checking column
+     * @param value checking value
+     * @return Contain
+     */
     public boolean containValue(String table, String column, String value) {
         boolean bool = false;
         try {

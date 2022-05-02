@@ -12,7 +12,7 @@ import java.util.Base64;
 /**
  * Bidirectional Base64 Encoding
  */
-public class Base64Connector {
+public final class Base64Connector {
     /**
      * Object Convert to ByteArray
      *

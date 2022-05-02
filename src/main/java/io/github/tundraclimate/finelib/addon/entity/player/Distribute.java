@@ -13,7 +13,7 @@ import java.util.Set;
 /**
  * Distribution Object
  */
-public class Distribute {
+public final class Distribute {
     /**
      * Distribute items
      *

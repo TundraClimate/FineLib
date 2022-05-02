@@ -14,7 +14,7 @@ import java.util.Map;
 /**
  * Build Inventory
  */
-public class InventoryBuilder {
+public final class InventoryBuilder {
     private final Inventory inventory;
 
     /**

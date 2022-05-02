@@ -9,7 +9,7 @@ import java.util.Random;
  *
  * @param <E> Output classType
  */
-public class Randomizer<E> {
+public final class Randomizer<E> {
     List<E> table = new ArrayList<>();
 
     /**

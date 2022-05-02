@@ -10,7 +10,7 @@ import javax.annotation.Nonnull;
 /**
  * DataContainer Utility
  */
-public class DataContainer {
+public final class DataContainer {
     /**
      * Container set Data
      *

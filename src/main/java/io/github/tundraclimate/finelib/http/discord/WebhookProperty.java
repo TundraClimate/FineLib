@@ -6,7 +6,7 @@ import java.util.List;
 /**
  * Property Data class
  */
-public class WebhookProperty {
+public final class WebhookProperty {
     /**
      * null Property
      */

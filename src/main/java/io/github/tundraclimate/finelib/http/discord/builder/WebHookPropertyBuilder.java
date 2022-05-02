@@ -9,7 +9,7 @@ import java.util.List;
 /**
  * Build Webhook Property
  */
-public class WebHookPropertyBuilder {
+public final class WebHookPropertyBuilder {
     private final WebhookProperty webhookProperty = new WebhookProperty();
 
     /**

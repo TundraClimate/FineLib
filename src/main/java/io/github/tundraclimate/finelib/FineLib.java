@@ -6,9 +6,11 @@ import io.github.tundraclimate.finelib.event.spigot.PlayerInteractListener;
 import org.bukkit.Bukkit;
 import org.bukkit.plugin.PluginManager;
 import org.bukkit.plugin.java.JavaPlugin;
+import org.jetbrains.annotations.NotNull;
 
-import javax.annotation.Nonnull;
-
+/**
+ * Main Class
+ */
 public final class FineLib {
     private static JavaPlugin plugin;
 
@@ -26,12 +28,12 @@ public final class FineLib {
      *
      * @param plugin JavaPlugin instance for plugins that use FineLib
      */
-    public static void setPlugin(@Nonnull final JavaPlugin plugin) {
+    public static void setPlugin(@NotNull final JavaPlugin plugin) {
         FineLib.plugin = plugin;
-        registeredEvent(plugin);
+        registeringEvent(plugin);
     }
 
-    private static void registeredEvent(JavaPlugin plugin) {
+    private static void registeringEvent(JavaPlugin plugin) {
         PluginManager manager = plugin.getServer().getPluginManager();
         manager.registerEvents(new ChatEventListener(), plugin);
         manager.registerEvents(new PlayerInteractListener(), plugin);

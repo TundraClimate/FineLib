@@ -7,7 +7,7 @@ import java.util.List;
 /**
  * Build Embed of Webhook
  */
-public class EmbedBuilder {
+public final class EmbedBuilder {
     private final Embed embeds = new Embed();
 
     /**

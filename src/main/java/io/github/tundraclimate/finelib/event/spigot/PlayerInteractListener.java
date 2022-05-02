@@ -10,14 +10,14 @@ import org.bukkit.event.player.PlayerInteractEvent;
 /**
  * SignEvent callEvent
  */
-public class PlayerInteractListener implements Listener {
+public final class PlayerInteractListener implements Listener {
     /**
      * Detect Clicked Sign
      *
      * @param e InteractEvent
      */
     @EventHandler
-    public void onPlayerInteract(PlayerInteractEvent e) {
+    private void onPlayerInteract(PlayerInteractEvent e) {
         if (e.getClickedBlock() == null) {
             return;
         }

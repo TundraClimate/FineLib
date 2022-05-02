@@ -10,7 +10,7 @@ import org.bukkit.inventory.ShapelessRecipe;
 /**
  * Shapeless Recipe Modify
  */
-public class ShapelessRecipeModifier implements RecipeModifier {
+public final class ShapelessRecipeModifier implements RecipeModifier {
     private final ItemStack result;
     private final ShapelessRecipe recipe;
     private final NamespacedKey key;

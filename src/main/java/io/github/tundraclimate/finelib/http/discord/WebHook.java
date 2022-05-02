@@ -15,7 +15,7 @@ import java.nio.charset.StandardCharsets;
 /**
  * Discord WebHook Sender
  */
-public class WebHook {
+public final class WebHook {
     private String webhookURL = null;
     private HttpURLConnection connection = null;
 

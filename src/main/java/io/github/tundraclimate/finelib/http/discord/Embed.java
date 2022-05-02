@@ -5,7 +5,7 @@ import java.util.List;
 /**
  * Embed Data class
  */
-public class Embed {
+public final class Embed {
     private String title;
     private int color;
     private String url;
