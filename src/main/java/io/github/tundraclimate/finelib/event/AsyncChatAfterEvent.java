@@ -1,4 +1,4 @@
-package io.github.tundraclimate.finelib.event;
+package com.tundra.finelib.event;
 
 import org.bukkit.entity.Player;
 import org.bukkit.event.Cancellable;
@@ -8,7 +8,7 @@ import org.bukkit.event.HandlerList;
 /**
  * Events called after asynchronous chat
  */
-public final class AsyncChatAfterEvent extends Event implements Cancellable {
+public class AsyncChatAfterEvent extends Event implements Cancellable {
     private final String message;
     private final Player player;
     private static final HandlerList HANDLERS_LIST = new HandlerList();
@@ -16,12 +16,11 @@ public final class AsyncChatAfterEvent extends Event implements Cancellable {
 
     /**
      * Get chat information
-     *
-     * @param async   isAsync
-     * @param who     Chatting Player
+     * @param async isAsync
+     * @param who Chatting Player
      * @param message Chat Message
      */
-    public AsyncChatAfterEvent(boolean async, Player who, String message) {
+    public AsyncChatAfterEvent(boolean async, Player who, String message){
         super(async);
         this.message = message;
         this.player = who;
@@ -44,7 +43,6 @@ public final class AsyncChatAfterEvent extends Event implements Cancellable {
 
     /**
      * return Handler List
-     *
      * @return Handlers list
      */
     public static HandlerList getHandlerList() {
@@ -53,7 +51,6 @@ public final class AsyncChatAfterEvent extends Event implements Cancellable {
 
     /**
      * Chatting Player getter
-     *
      * @return Chatting Player
      */
     public Player getPlayer() {
@@ -62,7 +59,6 @@ public final class AsyncChatAfterEvent extends Event implements Cancellable {
 
     /**
      * Message getter
-     *
      * @return Chat Message
      */
     public String getMessage() {

@@ -1,7 +1,7 @@
-package io.github.tundraclimate.finelib.event.spigot;
+package com.tundra.finelib.event.spigot;
 
-import io.github.tundraclimate.finelib.FineLib;
-import io.github.tundraclimate.finelib.event.AsyncChatAfterEvent;
+import com.tundra.finelib.FineLib;
+import com.tundra.finelib.event.AsyncChatAfterEvent;
 import org.bukkit.Bukkit;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
@@ -11,13 +11,13 @@ import org.bukkit.scheduler.BukkitRunnable;
 /**
  * Async Chat Listen
  */
-public final class ChatEventListener implements Listener {
+public class ChatEventListener implements Listener {
     /**
      * ChatEvent Detect
      * @param e AsyncPlayerChatEvent
      */
     @EventHandler
-    private void ChatDetect(AsyncPlayerChatEvent e){
+    protected void ChatDetect(AsyncPlayerChatEvent e){
         new BukkitRunnable() {
             @Override
             public void run() {
