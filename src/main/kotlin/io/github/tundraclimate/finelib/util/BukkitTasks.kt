@@ -1,11 +1,10 @@
-package io.github.tundraclimate.finelib
+package io.github.tundraclimate.finelib.util
 
+import io.github.tundraclimate.finelib.FineLib
 import org.bukkit.scheduler.BukkitRunnable
 
 /**
- * Bukkit runTask
- *
- * @param async async task?
+ * run [task] on [async]
  */
 fun <T> T.runTask(async: Boolean = false, task: Runnable) {
     val scheduler = FineLib.getPlugin().server.scheduler
@@ -14,9 +13,7 @@ fun <T> T.runTask(async: Boolean = false, task: Runnable) {
 }
 
 /**
- * Bukkit runTask
- *
- * @param async async task?
+ * run [runTask] on [async]
  */
 fun <T> T.runTask(async: Boolean = false, runTask: T.() -> Unit) {
     val task = object : BukkitRunnable() {
@@ -29,10 +26,7 @@ fun <T> T.runTask(async: Boolean = false, runTask: T.() -> Unit) {
 }
 
 /**
- * Bukkit runTaskLater
- *
- * @param delay task delay
- * @param async async task?
+ * run [task] on [async] to [delay]
  */
 fun <T> T.runTaskLater(delay: Long, async: Boolean = false, task: Runnable) {
     val scheduler = FineLib.getPlugin().server.scheduler
@@ -41,10 +35,7 @@ fun <T> T.runTaskLater(delay: Long, async: Boolean = false, task: Runnable) {
 }
 
 /**
- * Bukkit runTaskLater
- *
- * @param delay task delay
- * @param async async task?
+ * run [runTask] on [async] to [delay]
  */
 fun <T> T.runTaskLater(delay: Long, async: Boolean = false, runTask: T.() -> Unit) {
     val task = object : BukkitRunnable() {
@@ -54,34 +45,4 @@ fun <T> T.runTaskLater(delay: Long, async: Boolean = false, runTask: T.() -> Uni
     }
     if (!async) task.runTaskLater(FineLib.getPlugin(), delay)
     else task.runTaskLaterAsynchronously(FineLib.getPlugin(), delay)
-}
-
-/**
- * Bukkit runTaskTimer
- *
- * @param delay task delay
- * @param period task period
- * @param async async task?
- */
-fun <T> T.runTaskTimer(delay: Long, period: Long, async: Boolean = false, task: Runnable) {
-    val scheduler = FineLib.getPlugin().server.scheduler
-    if (!async) scheduler.runTaskTimer(FineLib.getPlugin(), task, delay, period)
-    else scheduler.runTaskTimerAsynchronously(FineLib.getPlugin(), task, delay, period)
-}
-
-/**
- * Bukkit runTaskTimer
- *
- * @param delay task delay
- * @param period task period
- * @param async async task?
- */
-fun <T> T.runTaskTimer(delay: Long, period: Long, async: Boolean = false, runTask: T.() -> Unit) {
-    val task = object : BukkitRunnable() {
-        override fun run() {
-            runTask()
-        }
-    }
-    if (!async) task.runTaskTimer(FineLib.getPlugin(), delay, period)
-    else task.runTaskTimerAsynchronously(FineLib.getPlugin(), delay, period)
 }
