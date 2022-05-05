@@ -6,6 +6,15 @@ import org.bukkit.scheduler.BukkitRunnable
 /**
  * run [task] on [async]
  */
+fun runTask(async: Boolean = false, task: Runnable) {
+    val scheduler = FineLib.getPlugin().server.scheduler
+    if (!async) scheduler.runTask(FineLib.getPlugin(), task)
+    else scheduler.runTaskAsynchronously(FineLib.getPlugin(), task)
+}
+
+/**
+ * run [task] on [async]
+ */
 fun <T> T.runTask(async: Boolean = false, task: Runnable) {
     val scheduler = FineLib.getPlugin().server.scheduler
     if (!async) scheduler.runTask(FineLib.getPlugin(), task)
@@ -15,14 +24,23 @@ fun <T> T.runTask(async: Boolean = false, task: Runnable) {
 /**
  * run [runTask] on [async]
  */
-fun <T> T.runTask(async: Boolean = false, runTask: T.() -> Unit) {
-    val task = object : BukkitRunnable() {
+fun <T> T.runTask(async: Boolean = false, task: T.() -> Unit) {
+    val runnable = object : BukkitRunnable() {
         override fun run() {
-            runTask()
+            task()
         }
     }
-    if (!async) task.runTask(FineLib.getPlugin())
-    else task.runTaskAsynchronously(FineLib.getPlugin())
+    if (!async) runnable.runTask(FineLib.getPlugin())
+    else runnable.runTaskAsynchronously(FineLib.getPlugin())
+}
+
+/**
+ * run [task] on [async] to [delay]
+ */
+fun runTaskLater(delay: Long, async: Boolean = false, task: Runnable) {
+    val scheduler = FineLib.getPlugin().server.scheduler
+    if (!async) scheduler.runTaskLater(FineLib.getPlugin(), task, delay)
+    else scheduler.runTaskLaterAsynchronously(FineLib.getPlugin(), task, delay)
 }
 
 /**
@@ -37,12 +55,12 @@ fun <T> T.runTaskLater(delay: Long, async: Boolean = false, task: Runnable) {
 /**
  * run [runTask] on [async] to [delay]
  */
-fun <T> T.runTaskLater(delay: Long, async: Boolean = false, runTask: T.() -> Unit) {
-    val task = object : BukkitRunnable() {
+fun <T> T.runTaskLater(delay: Long, async: Boolean = false, task: T.() -> Unit) {
+    val runnable = object : BukkitRunnable() {
         override fun run() {
-            runTask()
+            task()
         }
     }
-    if (!async) task.runTaskLater(FineLib.getPlugin(), delay)
-    else task.runTaskLaterAsynchronously(FineLib.getPlugin(), delay)
+    if (!async) runnable.runTaskLater(FineLib.getPlugin(), delay)
+    else runnable.runTaskLaterAsynchronously(FineLib.getPlugin(), delay)
 }
