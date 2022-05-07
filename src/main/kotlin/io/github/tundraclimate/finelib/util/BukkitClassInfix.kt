@@ -32,6 +32,6 @@ operator fun Inventory.minus(stack: ItemStack): Inventory {
 /**
  * Inventory minus [material]
  *
- * @throws IllegalArgumentException [stack] of not Found Inventory
+ * @throws IllegalArgumentException [material] of not Found Inventory
  */
 operator fun Inventory.minus(material: Material): Inventory = minus(ItemStack(material))
