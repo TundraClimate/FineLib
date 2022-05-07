@@ -49,6 +49,8 @@ object SpawnerFactory {
 
     /**
      * update [block] to [spawner]
+     *
+     * @throws IllegalArgumentException [loc] in [world] not Placeable Height
      */
     fun update(block: Block, spawner: Spawner) {
         place(block.world, block.location, spawner)
