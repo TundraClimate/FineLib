@@ -57,6 +57,17 @@ public final class InventoryBuilder {
     }
 
     /**
+     * set InventoryHolder, InventoryHeight and InventoryTitle
+     *
+     * @param holder    Inventory GUI Holder
+     * @param invHeight Inventory GUI Height
+     * @param title     Inventory GUI Name
+     */
+    public InventoryBuilder(InventoryHolder holder, int invHeight, String title) {
+        inventory = Bukkit.createInventory(holder, invHeight * 9, title);
+    }
+
+    /**
      * set InventoryHolder and InventoryType
      *
      * @param holder Inventory GUI Holder
@@ -107,7 +118,7 @@ public final class InventoryBuilder {
      * @return this
      */
     public InventoryBuilder fillItem(ItemStack stack) {
-        for (int index = 0;inventory.getSize()-1 >= index;index++){
+        for (int index = 0; inventory.getSize() - 1 >= index; index++) {
             inventory.setItem(index, stack);
         }
         return this;
