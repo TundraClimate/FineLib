@@ -37,6 +37,23 @@ class CSVLoader(val file: File) {
     }
 
     /**
+     * select [column] values
+     *
+     * @throws IllegalArgumentException [column] is not found
+     */
+    fun selectColumn(column: String): List<String> {
+        val columns = lines[0].split(",")
+        if (!columns.contains(column)) throw IllegalArgumentException("$column is Not Found")
+        val index = columns.indexOf(column)
+        val values = mutableListOf<String>()
+        lines.forEach {
+            val split = it.split(",")
+            values.add(split[index])
+        }
+        return values
+    }
+
+    /**
      * [column] contain a [value]?
      */
     fun contain(column: Int, value: String): Boolean {
