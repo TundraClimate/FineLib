@@ -7,7 +7,7 @@ import org.bukkit.inventory.ItemStack
  * ItemStack DataBase used SQLite
  */
 object ItemStackDataBase {
-    val sqLite = SQLite("REGISTRY")
+    val sqLite = SQLite("REGISTRY.sqlite")
 
     /**
      * create ItemStack DataBase
